@@ -253,7 +253,7 @@ router.patch('/update-subscription-base', async (req, res) => {
       return res.status(404).json({ success: false, message: 'User not found' });
     }
 
-    const updatedSubscription = await Subscription.findOneAndUpdate(
+    const updatedSubscription = await SubscriptionBase.findOneAndUpdate(
       { tokenId },
       { $set: { user: user._id, isListed: false } },
       { new: true }
